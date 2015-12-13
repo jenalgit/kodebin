@@ -33,6 +33,7 @@ use Kodebin\Security\Password;
 Files::create($location); // Create file
 Files::read($location); // Read file
 Files::replace($exist,$content,$output); // Replace or create other file
+Files::extension($location); // Get Extension file
 
 Folder::create($name); // Create folder
 
