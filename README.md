@@ -41,5 +41,6 @@ Patch::lfi_escape($string); // LFI Security
 Patch::sql_escape($string); // SQL Security
 
 Curl::post($url, $data); // Curl POST , $data is array with json_encode or not
+Curl::get($url, $data); // Curl GET, $url = http://google.com/ , $data = parameter
 
 ```
