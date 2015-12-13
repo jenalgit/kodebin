@@ -24,6 +24,7 @@ echo "extension=kodebin.so" >> /etc/php5/apache2/php.ini
 ```php
 <?php
 use Kodebin\Lib\Files;
+use Kodebin\Lib\Curl;
 use Kodebin\Lib\Folder;
 use Kodebin\Security\Patch;
 use Kodebin\Security\Password;
@@ -38,5 +39,7 @@ Folder::create($name); // Create folder
 Patch::xss_escape($string); // XSS Security
 Patch::lfi_escape($string); // LFI Security
 Patch::sql_escape($string); // SQL Security
+
+Curl::post($url, $data); // Curl POST , $data is array with json_encode or not
 
 ```
