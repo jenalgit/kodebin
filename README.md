@@ -30,10 +30,15 @@ use Kodebin\Security\Patch;
 use Kodebin\Security\Password;
 
 
+Password::md5_api($string); // Create MD5 for API
+Password::md5_10($string); // Create MD5 with 10 char and with new logic
+
 Files::create($location); // Create file
 Files::read($location); // Read file
 Files::replace($exist,$content,$output); // Replace or create other file
 Files::extension($location); // Get Extension file
+Files::size($location); // Get size file
+Files::size_format($location); // Get size file and format to KB,MB,GB,TB
 
 Folder::create($name); // Create folder
 
