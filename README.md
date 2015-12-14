@@ -26,9 +26,12 @@ echo "extension=kodebin.so" >> /etc/php5/apache2/php.ini
 use Kodebin\Lib\Files;
 use Kodebin\Lib\Curl;
 use Kodebin\Lib\Folder;
+use Kodebin\Lib\Github;
 use Kodebin\Security\Patch;
 use Kodebin\Security\Password;
 
+
+Github::markdown($markdown); // Render markdown with API Github
 
 Password::md5_api($string); // Create MD5 for API
 Password::md5_10($string); // Create MD5 with 10 char and with new logic
