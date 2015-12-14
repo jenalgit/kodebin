@@ -1,7 +1,7 @@
-srcdir = /home/ubuntu/workspace/dev/kodebin/ext
-builddir = /home/ubuntu/workspace/dev/kodebin/ext
-top_srcdir = /home/ubuntu/workspace/dev/kodebin/ext
-top_builddir = /home/ubuntu/workspace/dev/kodebin/ext
+srcdir = /home/ubuntu/workspace/kodebin-lib/ext
+builddir = /home/ubuntu/workspace/kodebin-lib/ext
+top_srcdir = /home/ubuntu/workspace/kodebin-lib/ext
+top_builddir = /home/ubuntu/workspace/kodebin-lib/ext
 EGREP = /bin/grep -E
 SED = /bin/sed
 CONFIGURE_COMMAND = './configure' '--enable-kodebin'
@@ -11,7 +11,7 @@ SHLIB_DL_SUFFIX_NAME = so
 ZEND_EXT_TYPE = zend_extension
 RE2C = re2c
 AWK = gawk
-shared_objects_kodebin = kodebin.lo kernel/main.lo kernel/memory.lo kernel/exception.lo kernel/hash.lo kernel/debug.lo kernel/backtrace.lo kernel/object.lo kernel/array.lo kernel/extended/array.lo kernel/string.lo kernel/fcall.lo kernel/extended/fcall.lo kernel/require.lo kernel/file.lo kernel/operators.lo kernel/math.lo kernel/concat.lo kernel/variables.lo kernel/filter.lo kernel/iterator.lo kernel/time.lo kernel/exit.lo kodebin/lib/curl.lo kodebin/lib/files.lo kodebin/lib/folder.lo kodebin/security/password.lo kodebin/security/patch.lo
+shared_objects_kodebin = kodebin.lo kernel/main.lo kernel/memory.lo kernel/exception.lo kernel/hash.lo kernel/debug.lo kernel/backtrace.lo kernel/object.lo kernel/array.lo kernel/extended/array.lo kernel/string.lo kernel/fcall.lo kernel/extended/fcall.lo kernel/require.lo kernel/file.lo kernel/operators.lo kernel/math.lo kernel/concat.lo kernel/variables.lo kernel/filter.lo kernel/iterator.lo kernel/time.lo kernel/exit.lo kodebin/lib/curl.lo kodebin/lib/dir.lo kodebin/lib/files.lo kodebin/lib/folder.lo kodebin/security/password.lo kodebin/security/patch.lo
 PHP_PECL_EXTENSION = kodebin
 KODEBIN_SHARED_LIBADD =
 PHP_MODULES = $(phplibdir)/kodebin.la
@@ -22,7 +22,7 @@ prefix = /usr
 exec_prefix = $(prefix)
 libdir = ${exec_prefix}/lib
 prefix = /usr
-phplibdir = /home/ubuntu/workspace/dev/kodebin/ext/modules
+phplibdir = /home/ubuntu/workspace/kodebin-lib/ext/modules
 phpincludedir = /usr/include/php5
 CC = gcc
 CFLAGS = -O2 -fvisibility=hidden -Wparentheses -flto -DZEPHIR_RELEASE=1
@@ -177,62 +177,64 @@ distclean: clean
 
 .PHONY: all clean install distclean test
 .NOEXPORT:
-kodebin.lo: /home/ubuntu/workspace/dev/kodebin/ext/kodebin.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/dev/kodebin/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/dev/kodebin/ext/kodebin.c -o kodebin.lo 
-kernel/main.lo: /home/ubuntu/workspace/dev/kodebin/ext/kernel/main.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/dev/kodebin/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/dev/kodebin/ext/kernel/main.c -o kernel/main.lo 
-kernel/memory.lo: /home/ubuntu/workspace/dev/kodebin/ext/kernel/memory.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/dev/kodebin/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/dev/kodebin/ext/kernel/memory.c -o kernel/memory.lo 
-kernel/exception.lo: /home/ubuntu/workspace/dev/kodebin/ext/kernel/exception.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/dev/kodebin/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/dev/kodebin/ext/kernel/exception.c -o kernel/exception.lo 
-kernel/hash.lo: /home/ubuntu/workspace/dev/kodebin/ext/kernel/hash.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/dev/kodebin/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/dev/kodebin/ext/kernel/hash.c -o kernel/hash.lo 
-kernel/debug.lo: /home/ubuntu/workspace/dev/kodebin/ext/kernel/debug.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/dev/kodebin/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/dev/kodebin/ext/kernel/debug.c -o kernel/debug.lo 
-kernel/backtrace.lo: /home/ubuntu/workspace/dev/kodebin/ext/kernel/backtrace.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/dev/kodebin/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/dev/kodebin/ext/kernel/backtrace.c -o kernel/backtrace.lo 
-kernel/object.lo: /home/ubuntu/workspace/dev/kodebin/ext/kernel/object.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/dev/kodebin/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/dev/kodebin/ext/kernel/object.c -o kernel/object.lo 
-kernel/array.lo: /home/ubuntu/workspace/dev/kodebin/ext/kernel/array.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/dev/kodebin/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/dev/kodebin/ext/kernel/array.c -o kernel/array.lo 
-kernel/extended/array.lo: /home/ubuntu/workspace/dev/kodebin/ext/kernel/extended/array.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/dev/kodebin/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/dev/kodebin/ext/kernel/extended/array.c -o kernel/extended/array.lo 
-kernel/string.lo: /home/ubuntu/workspace/dev/kodebin/ext/kernel/string.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/dev/kodebin/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/dev/kodebin/ext/kernel/string.c -o kernel/string.lo 
-kernel/fcall.lo: /home/ubuntu/workspace/dev/kodebin/ext/kernel/fcall.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/dev/kodebin/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/dev/kodebin/ext/kernel/fcall.c -o kernel/fcall.lo 
-kernel/extended/fcall.lo: /home/ubuntu/workspace/dev/kodebin/ext/kernel/extended/fcall.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/dev/kodebin/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/dev/kodebin/ext/kernel/extended/fcall.c -o kernel/extended/fcall.lo 
-kernel/require.lo: /home/ubuntu/workspace/dev/kodebin/ext/kernel/require.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/dev/kodebin/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/dev/kodebin/ext/kernel/require.c -o kernel/require.lo 
-kernel/file.lo: /home/ubuntu/workspace/dev/kodebin/ext/kernel/file.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/dev/kodebin/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/dev/kodebin/ext/kernel/file.c -o kernel/file.lo 
-kernel/operators.lo: /home/ubuntu/workspace/dev/kodebin/ext/kernel/operators.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/dev/kodebin/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/dev/kodebin/ext/kernel/operators.c -o kernel/operators.lo 
-kernel/math.lo: /home/ubuntu/workspace/dev/kodebin/ext/kernel/math.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/dev/kodebin/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/dev/kodebin/ext/kernel/math.c -o kernel/math.lo 
-kernel/concat.lo: /home/ubuntu/workspace/dev/kodebin/ext/kernel/concat.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/dev/kodebin/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/dev/kodebin/ext/kernel/concat.c -o kernel/concat.lo 
-kernel/variables.lo: /home/ubuntu/workspace/dev/kodebin/ext/kernel/variables.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/dev/kodebin/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/dev/kodebin/ext/kernel/variables.c -o kernel/variables.lo 
-kernel/filter.lo: /home/ubuntu/workspace/dev/kodebin/ext/kernel/filter.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/dev/kodebin/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/dev/kodebin/ext/kernel/filter.c -o kernel/filter.lo 
-kernel/iterator.lo: /home/ubuntu/workspace/dev/kodebin/ext/kernel/iterator.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/dev/kodebin/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/dev/kodebin/ext/kernel/iterator.c -o kernel/iterator.lo 
-kernel/time.lo: /home/ubuntu/workspace/dev/kodebin/ext/kernel/time.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/dev/kodebin/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/dev/kodebin/ext/kernel/time.c -o kernel/time.lo 
-kernel/exit.lo: /home/ubuntu/workspace/dev/kodebin/ext/kernel/exit.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/dev/kodebin/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/dev/kodebin/ext/kernel/exit.c -o kernel/exit.lo 
-kodebin/lib/curl.lo: /home/ubuntu/workspace/dev/kodebin/ext/kodebin/lib/curl.zep.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/dev/kodebin/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/dev/kodebin/ext/kodebin/lib/curl.zep.c -o kodebin/lib/curl.lo 
-kodebin/lib/files.lo: /home/ubuntu/workspace/dev/kodebin/ext/kodebin/lib/files.zep.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/dev/kodebin/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/dev/kodebin/ext/kodebin/lib/files.zep.c -o kodebin/lib/files.lo 
-kodebin/lib/folder.lo: /home/ubuntu/workspace/dev/kodebin/ext/kodebin/lib/folder.zep.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/dev/kodebin/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/dev/kodebin/ext/kodebin/lib/folder.zep.c -o kodebin/lib/folder.lo 
-kodebin/security/password.lo: /home/ubuntu/workspace/dev/kodebin/ext/kodebin/security/password.zep.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/dev/kodebin/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/dev/kodebin/ext/kodebin/security/password.zep.c -o kodebin/security/password.lo 
-kodebin/security/patch.lo: /home/ubuntu/workspace/dev/kodebin/ext/kodebin/security/patch.zep.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/dev/kodebin/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/dev/kodebin/ext/kodebin/security/patch.zep.c -o kodebin/security/patch.lo 
+kodebin.lo: /home/ubuntu/workspace/kodebin-lib/ext/kodebin.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kodebin.c -o kodebin.lo 
+kernel/main.lo: /home/ubuntu/workspace/kodebin-lib/ext/kernel/main.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kernel/main.c -o kernel/main.lo 
+kernel/memory.lo: /home/ubuntu/workspace/kodebin-lib/ext/kernel/memory.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kernel/memory.c -o kernel/memory.lo 
+kernel/exception.lo: /home/ubuntu/workspace/kodebin-lib/ext/kernel/exception.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kernel/exception.c -o kernel/exception.lo 
+kernel/hash.lo: /home/ubuntu/workspace/kodebin-lib/ext/kernel/hash.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kernel/hash.c -o kernel/hash.lo 
+kernel/debug.lo: /home/ubuntu/workspace/kodebin-lib/ext/kernel/debug.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kernel/debug.c -o kernel/debug.lo 
+kernel/backtrace.lo: /home/ubuntu/workspace/kodebin-lib/ext/kernel/backtrace.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kernel/backtrace.c -o kernel/backtrace.lo 
+kernel/object.lo: /home/ubuntu/workspace/kodebin-lib/ext/kernel/object.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kernel/object.c -o kernel/object.lo 
+kernel/array.lo: /home/ubuntu/workspace/kodebin-lib/ext/kernel/array.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kernel/array.c -o kernel/array.lo 
+kernel/extended/array.lo: /home/ubuntu/workspace/kodebin-lib/ext/kernel/extended/array.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kernel/extended/array.c -o kernel/extended/array.lo 
+kernel/string.lo: /home/ubuntu/workspace/kodebin-lib/ext/kernel/string.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kernel/string.c -o kernel/string.lo 
+kernel/fcall.lo: /home/ubuntu/workspace/kodebin-lib/ext/kernel/fcall.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kernel/fcall.c -o kernel/fcall.lo 
+kernel/extended/fcall.lo: /home/ubuntu/workspace/kodebin-lib/ext/kernel/extended/fcall.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kernel/extended/fcall.c -o kernel/extended/fcall.lo 
+kernel/require.lo: /home/ubuntu/workspace/kodebin-lib/ext/kernel/require.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kernel/require.c -o kernel/require.lo 
+kernel/file.lo: /home/ubuntu/workspace/kodebin-lib/ext/kernel/file.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kernel/file.c -o kernel/file.lo 
+kernel/operators.lo: /home/ubuntu/workspace/kodebin-lib/ext/kernel/operators.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kernel/operators.c -o kernel/operators.lo 
+kernel/math.lo: /home/ubuntu/workspace/kodebin-lib/ext/kernel/math.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kernel/math.c -o kernel/math.lo 
+kernel/concat.lo: /home/ubuntu/workspace/kodebin-lib/ext/kernel/concat.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kernel/concat.c -o kernel/concat.lo 
+kernel/variables.lo: /home/ubuntu/workspace/kodebin-lib/ext/kernel/variables.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kernel/variables.c -o kernel/variables.lo 
+kernel/filter.lo: /home/ubuntu/workspace/kodebin-lib/ext/kernel/filter.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kernel/filter.c -o kernel/filter.lo 
+kernel/iterator.lo: /home/ubuntu/workspace/kodebin-lib/ext/kernel/iterator.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kernel/iterator.c -o kernel/iterator.lo 
+kernel/time.lo: /home/ubuntu/workspace/kodebin-lib/ext/kernel/time.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kernel/time.c -o kernel/time.lo 
+kernel/exit.lo: /home/ubuntu/workspace/kodebin-lib/ext/kernel/exit.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kernel/exit.c -o kernel/exit.lo 
+kodebin/lib/curl.lo: /home/ubuntu/workspace/kodebin-lib/ext/kodebin/lib/curl.zep.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kodebin/lib/curl.zep.c -o kodebin/lib/curl.lo 
+kodebin/lib/dir.lo: /home/ubuntu/workspace/kodebin-lib/ext/kodebin/lib/dir.zep.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kodebin/lib/dir.zep.c -o kodebin/lib/dir.lo 
+kodebin/lib/files.lo: /home/ubuntu/workspace/kodebin-lib/ext/kodebin/lib/files.zep.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kodebin/lib/files.zep.c -o kodebin/lib/files.lo 
+kodebin/lib/folder.lo: /home/ubuntu/workspace/kodebin-lib/ext/kodebin/lib/folder.zep.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kodebin/lib/folder.zep.c -o kodebin/lib/folder.lo 
+kodebin/security/password.lo: /home/ubuntu/workspace/kodebin-lib/ext/kodebin/security/password.zep.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kodebin/security/password.zep.c -o kodebin/security/password.lo 
+kodebin/security/patch.lo: /home/ubuntu/workspace/kodebin-lib/ext/kodebin/security/patch.zep.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kodebin/security/patch.zep.c -o kodebin/security/patch.lo 
 $(phplibdir)/kodebin.la: ./kodebin.la
 	$(LIBTOOL) --mode=install cp ./kodebin.la $(phplibdir)
 

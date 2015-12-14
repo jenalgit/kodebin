@@ -17,6 +17,28 @@ class Files {
 	return pathinfo(location, PATHINFO_EXTENSION);
 	}
 	
+	public static function time(string! format, string! location) {
+	return date(format, filemtime(location));
+	}
+	
+	public static function size(string! location) {
+	return filesize(location);
+	}
+	
+	public static function size_format(string! location) {
+	var size;
+	var base;
+	array type;
+	let type = [" bytes", " KB", " MB", " GB", " TB"];
+	let size = filesize(location);
+	let base = log(size, 1024);
+    if(base > 0){
+    return round(pow(1024, base - floor(base)), 2) . type[base];
+    }else{
+    return "0 bytes";
+    }
+	}
+	
 	public static function replace(string! now, string! contentnew, string! output) {
 	var file;
 	var content;

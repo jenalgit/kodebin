@@ -48,11 +48,11 @@ PHP_METHOD(Kodebin_Lib_Folder, create) {
 	}
 
 
-	ZEPHIR_CALL_FUNCTION(&folder, "htmlspecialchars", NULL, 10, name);
+	ZEPHIR_CALL_FUNCTION(&folder, "htmlspecialchars", NULL, 16, name);
 	zephir_check_call_status();
 	ZEPHIR_SINIT_VAR(_0);
 	ZVAL_LONG(&_0, 0700);
-	ZEPHIR_CALL_FUNCTION(NULL, "mkdir", NULL, 11, folder, &_0);
+	ZEPHIR_CALL_FUNCTION(NULL, "mkdir", NULL, 17, folder, &_0);
 	zephir_check_call_status();
 	ZEPHIR_MM_RESTORE();
 

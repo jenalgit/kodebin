@@ -5,6 +5,7 @@
 #define ZEPHIR_CLASS_ENTRIES_H
 
 #include "kodebin/lib/curl.zep.h"
+#include "kodebin/lib/dir.zep.h"
 #include "kodebin/lib/files.zep.h"
 #include "kodebin/lib/folder.zep.h"
 #include "kodebin/security/password.zep.h"
