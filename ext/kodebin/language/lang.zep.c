@@ -56,7 +56,7 @@ PHP_METHOD(Kodebin_Language_Lang, template) {
 	if (ZEPHIR_IS_STRING(bahasa, "indonesia")) {
 	} else {
 		ZEPHIR_INIT_VAR(text);
-		zephir_create_array(text, 59, 0 TSRMLS_CC);
+		zephir_create_array(text, 61, 0 TSRMLS_CC);
 		add_assoc_stringl_ex(text, SS("home"), SL("Home"), 1);
 		add_assoc_stringl_ex(text, SS("explore"), SL("Explore"), 1);
 		add_assoc_stringl_ex(text, SS("notification"), SL("Notifications"), 1);
@@ -72,6 +72,8 @@ PHP_METHOD(Kodebin_Language_Lang, template) {
 		add_assoc_stringl_ex(text, SS("blog"), SL("Blog"), 1);
 		add_assoc_stringl_ex(text, SS("api"), SL("API"), 1);
 		add_assoc_stringl_ex(text, SS("explore_des"), SL("Search other open source project based on the available categories."), 1);
+		add_assoc_stringl_ex(text, SS("latest"), SL("Latest"), 1);
+		add_assoc_stringl_ex(text, SS("popular"), SL("Popular"), 1);
 		add_assoc_stringl_ex(text, SS("create_repo_des"), SL("Create new repository, or clone from Github and Bitbucket."), 1);
 		add_assoc_stringl_ex(text, SS("repo_name"), SL("Repository name"), 1);
 		add_assoc_stringl_ex(text, SS("repo_des"), SL("Description"), 1);
@@ -182,7 +184,7 @@ PHP_METHOD(Kodebin_Language_Lang, template) {
 		zephir_array_update_string(&text, SL("create_repo_error_3"), &_3$$3, PH_COPY | PH_SEPARATE);
 		add_assoc_stringl_ex(text, SS("create_repo_mode"), SL("create new a repository "), 1);
 	}
-	zephir_array_fetch(&_5, text, content, PH_NOISY | PH_READONLY, "kodebin/language/lang.zep", 87 TSRMLS_CC);
+	zephir_array_fetch(&_5, text, content, PH_NOISY | PH_READONLY, "kodebin/language/lang.zep", 89 TSRMLS_CC);
 	zend_print_zval(_5, 0);
 	ZEPHIR_MM_RESTORE();
 

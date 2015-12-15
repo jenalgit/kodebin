@@ -30,6 +30,8 @@ class Lang {
           "api": "API",
           // Explore
           "explore_des": "Search other open source project based on the available categories.",
+          "latest": "Latest",
+          "popular": "Popular",
           // Panel - Create Repo
           "create_repo_des": "Create new repository, or clone from Github and Bitbucket.",
           "repo_name": "Repository name",
