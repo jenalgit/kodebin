@@ -27,10 +27,11 @@ use Kodebin\Lib\Files;
 use Kodebin\Lib\Curl;
 use Kodebin\Lib\Folder;
 use Kodebin\Lib\Github;
+use Kodebin\Lib\Git;
 use Kodebin\Security\Patch;
 use Kodebin\Security\Password;
 
-
+Git::clone_repo($url,$extract_to_path) // Clone repo from git and extract to folder
 Github::markdown($markdown); // Render markdown with API Github
 
 Password::md5_api($string); // Create MD5 for API
