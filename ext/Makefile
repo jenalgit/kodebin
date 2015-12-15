@@ -11,7 +11,7 @@ SHLIB_DL_SUFFIX_NAME = so
 ZEND_EXT_TYPE = zend_extension
 RE2C = re2c
 AWK = gawk
-shared_objects_kodebin = kodebin.lo kernel/main.lo kernel/memory.lo kernel/exception.lo kernel/hash.lo kernel/debug.lo kernel/backtrace.lo kernel/object.lo kernel/array.lo kernel/extended/array.lo kernel/string.lo kernel/fcall.lo kernel/extended/fcall.lo kernel/require.lo kernel/file.lo kernel/operators.lo kernel/math.lo kernel/concat.lo kernel/variables.lo kernel/filter.lo kernel/iterator.lo kernel/time.lo kernel/exit.lo kodebin/lib/curl.lo kodebin/lib/dir.lo kodebin/lib/files.lo kodebin/lib/folder.lo kodebin/lib/github.lo kodebin/security/password.lo kodebin/security/patch.lo
+shared_objects_kodebin = kodebin.lo kernel/main.lo kernel/memory.lo kernel/exception.lo kernel/hash.lo kernel/debug.lo kernel/backtrace.lo kernel/object.lo kernel/array.lo kernel/extended/array.lo kernel/string.lo kernel/fcall.lo kernel/extended/fcall.lo kernel/require.lo kernel/file.lo kernel/operators.lo kernel/math.lo kernel/concat.lo kernel/variables.lo kernel/filter.lo kernel/iterator.lo kernel/time.lo kernel/exit.lo kodebin/lib/curl.lo kodebin/lib/dir.lo kodebin/lib/files.lo kodebin/lib/folder.lo kodebin/lib/git.lo kodebin/lib/github.lo kodebin/security/password.lo kodebin/security/patch.lo
 PHP_PECL_EXTENSION = kodebin
 KODEBIN_SHARED_LIBADD =
 PHP_MODULES = $(phplibdir)/kodebin.la
@@ -231,6 +231,8 @@ kodebin/lib/files.lo: /home/ubuntu/workspace/kodebin-lib/ext/kodebin/lib/files.z
 	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kodebin/lib/files.zep.c -o kodebin/lib/files.lo 
 kodebin/lib/folder.lo: /home/ubuntu/workspace/kodebin-lib/ext/kodebin/lib/folder.zep.c
 	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kodebin/lib/folder.zep.c -o kodebin/lib/folder.lo 
+kodebin/lib/git.lo: /home/ubuntu/workspace/kodebin-lib/ext/kodebin/lib/git.zep.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kodebin/lib/git.zep.c -o kodebin/lib/git.lo 
 kodebin/lib/github.lo: /home/ubuntu/workspace/kodebin-lib/ext/kodebin/lib/github.zep.c
 	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kodebin/lib/github.zep.c -o kodebin/lib/github.lo 
 kodebin/security/password.lo: /home/ubuntu/workspace/kodebin-lib/ext/kodebin/security/password.zep.c

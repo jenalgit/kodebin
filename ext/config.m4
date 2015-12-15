@@ -13,6 +13,7 @@ if test "$PHP_KODEBIN" = "yes"; then
 	kodebin/lib/dir.zep.c
 	kodebin/lib/files.zep.c
 	kodebin/lib/folder.zep.c
+	kodebin/lib/git.zep.c
 	kodebin/lib/github.zep.c
 	kodebin/security/password.zep.c
 	kodebin/security/patch.zep.c "

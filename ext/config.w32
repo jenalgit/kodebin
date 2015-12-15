@@ -11,7 +11,7 @@ if (PHP_KODEBIN != "no") {
     AC_DEFINE("ZEPHIR_USE_PHP_JSON", 1, "Whether PHP json extension is present at compile time");
   }
   
-  ADD_SOURCES(configure_module_dirname + "/kodebin/lib", "curl.zep.c dir.zep.c files.zep.c folder.zep.c github.zep.c", "kodebin");
+  ADD_SOURCES(configure_module_dirname + "/kodebin/lib", "curl.zep.c dir.zep.c files.zep.c folder.zep.c git.zep.c github.zep.c", "kodebin");
 	ADD_SOURCES(configure_module_dirname + "/kodebin/security", "password.zep.c patch.zep.c", "kodebin");
   ADD_FLAG("CFLAGS_KODEBIN", "/D ZEPHIR_RELEASE");
 }

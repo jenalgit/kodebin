@@ -52,6 +52,8 @@ kodebin/lib/files.lo: /home/ubuntu/workspace/kodebin-lib/ext/kodebin/lib/files.z
 	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kodebin/lib/files.zep.c -o kodebin/lib/files.lo 
 kodebin/lib/folder.lo: /home/ubuntu/workspace/kodebin-lib/ext/kodebin/lib/folder.zep.c
 	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kodebin/lib/folder.zep.c -o kodebin/lib/folder.lo 
+kodebin/lib/git.lo: /home/ubuntu/workspace/kodebin-lib/ext/kodebin/lib/git.zep.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kodebin/lib/git.zep.c -o kodebin/lib/git.lo 
 kodebin/lib/github.lo: /home/ubuntu/workspace/kodebin-lib/ext/kodebin/lib/github.zep.c
 	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/kodebin-lib/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/kodebin-lib/ext/kodebin/lib/github.zep.c -o kodebin/lib/github.lo 
 kodebin/security/password.lo: /home/ubuntu/workspace/kodebin-lib/ext/kodebin/security/password.zep.c
