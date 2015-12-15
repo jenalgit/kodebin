@@ -38,7 +38,7 @@ PHP_METHOD(Kodebin_Lib_Git, clone_repo) {
 
 	ZEPHIR_INIT_VAR(_0);
 	ZEPHIR_CONCAT_SVSV(_0, "git clone ", url, " ", location);
-	ZEPHIR_CALL_FUNCTION(&git, "exec", NULL, 18, _0);
+	ZEPHIR_CALL_FUNCTION(&git, "exec", NULL, 20, _0);
 	zephir_check_call_status();
 	if (!zephir_is_true(git)) {
 		RETURN_MM_STRING("Failed clone repository", 1);

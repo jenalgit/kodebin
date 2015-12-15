@@ -4,6 +4,7 @@
 #ifndef ZEPHIR_CLASS_ENTRIES_H
 #define ZEPHIR_CLASS_ENTRIES_H
 
+#include "kodebin/language/lang.zep.h"
 #include "kodebin/lib/curl.zep.h"
 #include "kodebin/lib/dir.zep.h"
 #include "kodebin/lib/files.zep.h"

@@ -65,7 +65,7 @@ PHP_METHOD(Kodebin_Lib_Files, create) {
 
 	ZEPHIR_SINIT_VAR(_0);
 	ZVAL_STRING(&_0, "w", 0);
-	ZEPHIR_CALL_FUNCTION(&file, "fopen", NULL, 9, location, &_0);
+	ZEPHIR_CALL_FUNCTION(&file, "fopen", NULL, 11, location, &_0);
 	zephir_check_call_status();
 	zephir_fwrite(NULL, file, content TSRMLS_CC);
 	zephir_fclose(file TSRMLS_CC);
@@ -94,7 +94,7 @@ PHP_METHOD(Kodebin_Lib_Files, read) {
 	}
 
 
-	ZEPHIR_RETURN_CALL_FUNCTION("file_get_contents", NULL, 10, location, ZEPHIR_GLOBAL(global_true));
+	ZEPHIR_RETURN_CALL_FUNCTION("file_get_contents", NULL, 12, location, ZEPHIR_GLOBAL(global_true));
 	zephir_check_call_status();
 	RETURN_MM();
 
@@ -123,7 +123,7 @@ PHP_METHOD(Kodebin_Lib_Files, extension) {
 
 	ZEPHIR_SINIT_VAR(_0);
 	ZVAL_LONG(&_0, 4);
-	ZEPHIR_RETURN_CALL_FUNCTION("pathinfo", NULL, 11, location, &_0);
+	ZEPHIR_RETURN_CALL_FUNCTION("pathinfo", NULL, 13, location, &_0);
 	zephir_check_call_status();
 	RETURN_MM();
 
@@ -162,7 +162,7 @@ PHP_METHOD(Kodebin_Lib_Files, time) {
 
 	ZEPHIR_INIT_VAR(_0);
 	zephir_filemtime(_0, location TSRMLS_CC);
-	ZEPHIR_RETURN_CALL_FUNCTION("date", NULL, 12, format, _0);
+	ZEPHIR_RETURN_CALL_FUNCTION("date", NULL, 14, format, _0);
 	zephir_check_call_status();
 	RETURN_MM();
 
@@ -189,7 +189,7 @@ PHP_METHOD(Kodebin_Lib_Files, size) {
 	}
 
 
-	ZEPHIR_RETURN_CALL_FUNCTION("filesize", NULL, 13, location);
+	ZEPHIR_RETURN_CALL_FUNCTION("filesize", NULL, 15, location);
 	zephir_check_call_status();
 	RETURN_MM();
 
@@ -234,11 +234,11 @@ PHP_METHOD(Kodebin_Lib_Files, size_format) {
 	ZEPHIR_INIT_NVAR(_0);
 	ZVAL_STRING(_0, " TB", 1);
 	zephir_array_fast_append(type, _0);
-	ZEPHIR_CALL_FUNCTION(&size, "filesize", NULL, 13, location);
+	ZEPHIR_CALL_FUNCTION(&size, "filesize", NULL, 15, location);
 	zephir_check_call_status();
 	ZEPHIR_SINIT_VAR(_1);
 	ZVAL_LONG(&_1, 1024);
-	ZEPHIR_CALL_FUNCTION(&base, "log", NULL, 14, size, &_1);
+	ZEPHIR_CALL_FUNCTION(&base, "log", NULL, 16, size, &_1);
 	zephir_check_call_status();
 	if (ZEPHIR_GT_LONG(base, 0)) {
 		ZEPHIR_INIT_VAR(_2$$3);
@@ -304,18 +304,18 @@ PHP_METHOD(Kodebin_Lib_Files, replace) {
 
 	ZEPHIR_SINIT_VAR(_0);
 	ZVAL_STRING(&_0, "r", 0);
-	ZEPHIR_CALL_FUNCTION(&file, "fopen", &_1, 9, now, &_0);
+	ZEPHIR_CALL_FUNCTION(&file, "fopen", &_1, 11, now, &_0);
 	zephir_check_call_status();
-	ZEPHIR_CALL_FUNCTION(&_2, "filesize", NULL, 13, now);
+	ZEPHIR_CALL_FUNCTION(&_2, "filesize", NULL, 15, now);
 	zephir_check_call_status();
-	ZEPHIR_CALL_FUNCTION(&content, "fread", NULL, 15, file, _2);
+	ZEPHIR_CALL_FUNCTION(&content, "fread", NULL, 17, file, _2);
 	zephir_check_call_status();
 	ZEPHIR_INIT_VAR(_3);
 	zephir_fast_str_replace(&_3, content, contentnew, content TSRMLS_CC);
 	ZEPHIR_CPY_WRT(content, _3);
 	ZEPHIR_SINIT_NVAR(_0);
 	ZVAL_STRING(&_0, "w", 0);
-	ZEPHIR_CALL_FUNCTION(&file_output, "fopen", &_1, 9, output, &_0);
+	ZEPHIR_CALL_FUNCTION(&file_output, "fopen", &_1, 11, output, &_0);
 	zephir_check_call_status();
 	zephir_fwrite(NULL, file_output, content TSRMLS_CC);
 	zephir_fclose(file_output TSRMLS_CC);

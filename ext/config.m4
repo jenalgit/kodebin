@@ -9,7 +9,8 @@ if test "$PHP_KODEBIN" = "yes"; then
 	fi
 
 	AC_DEFINE(HAVE_KODEBIN, 1, [Whether you have Kodebin])
-	kodebin_sources="kodebin.c kernel/main.c kernel/memory.c kernel/exception.c kernel/hash.c kernel/debug.c kernel/backtrace.c kernel/object.c kernel/array.c kernel/extended/array.c kernel/string.c kernel/fcall.c kernel/extended/fcall.c kernel/require.c kernel/file.c kernel/operators.c kernel/math.c kernel/concat.c kernel/variables.c kernel/filter.c kernel/iterator.c kernel/time.c kernel/exit.c kodebin/lib/curl.zep.c
+	kodebin_sources="kodebin.c kernel/main.c kernel/memory.c kernel/exception.c kernel/hash.c kernel/debug.c kernel/backtrace.c kernel/object.c kernel/array.c kernel/extended/array.c kernel/string.c kernel/fcall.c kernel/extended/fcall.c kernel/require.c kernel/file.c kernel/operators.c kernel/math.c kernel/concat.c kernel/variables.c kernel/filter.c kernel/iterator.c kernel/time.c kernel/exit.c kodebin/language/lang.zep.c
+	kodebin/lib/curl.zep.c
 	kodebin/lib/dir.zep.c
 	kodebin/lib/files.zep.c
 	kodebin/lib/folder.zep.c

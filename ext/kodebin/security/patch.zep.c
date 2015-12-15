@@ -49,7 +49,7 @@ PHP_METHOD(Kodebin_Security_Patch, xss_escape) {
 	}
 
 
-	ZEPHIR_RETURN_CALL_FUNCTION("htmlspecialchars", NULL, 16, str);
+	ZEPHIR_RETURN_CALL_FUNCTION("htmlspecialchars", NULL, 18, str);
 	zephir_check_call_status();
 	RETURN_MM();
 

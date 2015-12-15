@@ -50,37 +50,37 @@ PHP_METHOD(Kodebin_Lib_Curl, post) {
 	}
 
 
-	ZEPHIR_CALL_FUNCTION(&ch, "curl_init", NULL, 1, url);
+	ZEPHIR_CALL_FUNCTION(&ch, "curl_init", NULL, 3, url);
 	zephir_check_call_status();
 	ZEPHIR_SINIT_VAR(_0);
 	ZVAL_LONG(&_0, 10036);
 	ZEPHIR_SINIT_VAR(_1);
 	ZVAL_STRING(&_1, "POST", 0);
-	ZEPHIR_CALL_FUNCTION(NULL, "curl_setopt", &_2, 2, ch, &_0, &_1);
+	ZEPHIR_CALL_FUNCTION(NULL, "curl_setopt", &_2, 4, ch, &_0, &_1);
 	zephir_check_call_status();
 	ZEPHIR_SINIT_NVAR(_0);
 	ZVAL_LONG(&_0, 19913);
-	ZEPHIR_CALL_FUNCTION(NULL, "curl_setopt", &_2, 2, ch, &_0, ZEPHIR_GLOBAL(global_true));
+	ZEPHIR_CALL_FUNCTION(NULL, "curl_setopt", &_2, 4, ch, &_0, ZEPHIR_GLOBAL(global_true));
 	zephir_check_call_status();
 	ZEPHIR_SINIT_NVAR(_0);
 	ZVAL_LONG(&_0, 10015);
-	ZEPHIR_CALL_FUNCTION(NULL, "curl_setopt", &_2, 2, ch, &_0, content);
+	ZEPHIR_CALL_FUNCTION(NULL, "curl_setopt", &_2, 4, ch, &_0, content);
 	zephir_check_call_status();
 	ZEPHIR_SINIT_NVAR(_0);
 	ZVAL_LONG(&_0, 52);
 	ZEPHIR_SINIT_NVAR(_1);
 	ZVAL_LONG(&_1, 1);
-	ZEPHIR_CALL_FUNCTION(NULL, "curl_setopt", &_2, 2, ch, &_0, &_1);
+	ZEPHIR_CALL_FUNCTION(NULL, "curl_setopt", &_2, 4, ch, &_0, &_1);
 	zephir_check_call_status();
 	ZEPHIR_SINIT_NVAR(_0);
 	ZVAL_LONG(&_0, 10018);
 	ZEPHIR_SINIT_NVAR(_1);
 	ZVAL_STRING(&_1, "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13", 0);
-	ZEPHIR_CALL_FUNCTION(NULL, "curl_setopt", &_2, 2, ch, &_0, &_1);
+	ZEPHIR_CALL_FUNCTION(NULL, "curl_setopt", &_2, 4, ch, &_0, &_1);
 	zephir_check_call_status();
-	ZEPHIR_CALL_FUNCTION(&result, "curl_exec", NULL, 3, ch);
+	ZEPHIR_CALL_FUNCTION(&result, "curl_exec", NULL, 5, ch);
 	zephir_check_call_status();
-	ZEPHIR_CALL_FUNCTION(NULL, "curl_close", NULL, 4, ch);
+	ZEPHIR_CALL_FUNCTION(NULL, "curl_close", NULL, 6, ch);
 	zephir_check_call_status();
 	RETURN_CCTOR(result);
 
@@ -108,29 +108,29 @@ PHP_METHOD(Kodebin_Lib_Curl, get) {
 	}
 
 
-	ZEPHIR_CALL_FUNCTION(&ch, "curl_init", NULL, 1);
+	ZEPHIR_CALL_FUNCTION(&ch, "curl_init", NULL, 3);
 	zephir_check_call_status();
 	ZEPHIR_INIT_VAR(_0);
 	ZEPHIR_CONCAT_VV(_0, url, content);
 	ZEPHIR_SINIT_VAR(_1);
 	ZVAL_LONG(&_1, 10002);
-	ZEPHIR_CALL_FUNCTION(NULL, "curl_setopt", &_2, 2, ch, &_1, _0);
+	ZEPHIR_CALL_FUNCTION(NULL, "curl_setopt", &_2, 4, ch, &_1, _0);
 	zephir_check_call_status();
 	ZEPHIR_SINIT_NVAR(_1);
 	ZVAL_LONG(&_1, 19913);
 	ZEPHIR_SINIT_VAR(_3);
 	ZVAL_LONG(&_3, 1);
-	ZEPHIR_CALL_FUNCTION(NULL, "curl_setopt", &_2, 2, ch, &_1, &_3);
+	ZEPHIR_CALL_FUNCTION(NULL, "curl_setopt", &_2, 4, ch, &_1, &_3);
 	zephir_check_call_status();
 	ZEPHIR_SINIT_NVAR(_1);
 	ZVAL_LONG(&_1, 10018);
 	ZEPHIR_SINIT_NVAR(_3);
 	ZVAL_STRING(&_3, "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13", 0);
-	ZEPHIR_CALL_FUNCTION(NULL, "curl_setopt", &_2, 2, ch, &_1, &_3);
+	ZEPHIR_CALL_FUNCTION(NULL, "curl_setopt", &_2, 4, ch, &_1, &_3);
 	zephir_check_call_status();
-	ZEPHIR_CALL_FUNCTION(&result, "curl_exec", NULL, 3, ch);
+	ZEPHIR_CALL_FUNCTION(&result, "curl_exec", NULL, 5, ch);
 	zephir_check_call_status();
-	ZEPHIR_CALL_FUNCTION(NULL, "curl_close", NULL, 4, ch);
+	ZEPHIR_CALL_FUNCTION(NULL, "curl_close", NULL, 6, ch);
 	zephir_check_call_status();
 	RETURN_CCTOR(result);
 

@@ -27,6 +27,7 @@
 
 
 
+zend_class_entry *kodebin_language_lang_ce;
 zend_class_entry *kodebin_lib_curl_ce;
 zend_class_entry *kodebin_lib_dir_ce;
 zend_class_entry *kodebin_lib_files_ce;
@@ -60,6 +61,7 @@ static PHP_MINIT_FUNCTION(kodebin)
 	setlocale(LC_ALL, "C");
 #endif
 	REGISTER_INI_ENTRIES();
+	ZEPHIR_INIT(Kodebin_Language_Lang);
 	ZEPHIR_INIT(Kodebin_Lib_Curl);
 	ZEPHIR_INIT(Kodebin_Lib_Dir);
 	ZEPHIR_INIT(Kodebin_Lib_Files);

@@ -45,10 +45,10 @@ PHP_METHOD(Kodebin_Lib_Dir, tree) {
 	ZEPHIR_INIT_VAR(exclude);
 	ZVAL_STRING(exclude, "", 1);
 	skipByExclude = 0;
-	ZEPHIR_CALL_FUNCTION(&handle, "opendir", NULL, 5, dir);
+	ZEPHIR_CALL_FUNCTION(&handle, "opendir", NULL, 7, dir);
 	zephir_check_call_status();
 	if (zephir_is_true(handle)) {
-		ZEPHIR_CALL_FUNCTION(&file, "readdir", NULL, 6, handle);
+		ZEPHIR_CALL_FUNCTION(&file, "readdir", NULL, 8, handle);
 		zephir_check_call_status();
 		while (1) {
 			if (!(!ZEPHIR_IS_FALSE_IDENTICAL(file))) {
@@ -63,7 +63,7 @@ PHP_METHOD(Kodebin_Lib_Dir, tree) {
 			if (_0$$4) {
 				ZEPHIR_INIT_LNVAR(_1$$5);
 				ZEPHIR_CONCAT_VSV(_1$$5, dir, "/", file);
-				ZEPHIR_CALL_FUNCTION(&_2$$5, "is_dir", &_3, 7, _1$$5);
+				ZEPHIR_CALL_FUNCTION(&_2$$5, "is_dir", &_3, 9, _1$$5);
 				zephir_check_call_status();
 				if (zephir_is_true(_2$$5)) {
 					if (recursive) {
@@ -82,7 +82,7 @@ PHP_METHOD(Kodebin_Lib_Dir, tree) {
 				}
 			}
 		}
-		ZEPHIR_CALL_FUNCTION(NULL, "closedir", NULL, 8, handle);
+		ZEPHIR_CALL_FUNCTION(NULL, "closedir", NULL, 10, handle);
 		zephir_check_call_status();
 	}
 	RETURN_CCTOR(arrayItems);
