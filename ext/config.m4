@@ -16,6 +16,7 @@ if test "$PHP_KODEBIN" = "yes"; then
 	kodebin/lib/folder.zep.c
 	kodebin/lib/git.zep.c
 	kodebin/lib/github.zep.c
+	kodebin/security/firewall.zep.c
 	kodebin/security/password.zep.c
 	kodebin/security/patch.zep.c "
 	PHP_NEW_EXTENSION(kodebin, $kodebin_sources, $ext_shared,, )

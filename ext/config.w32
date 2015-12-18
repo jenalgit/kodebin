@@ -13,6 +13,6 @@ if (PHP_KODEBIN != "no") {
   
   ADD_SOURCES(configure_module_dirname + "/kodebin/language", "lang.zep.c", "kodebin");
 	ADD_SOURCES(configure_module_dirname + "/kodebin/lib", "curl.zep.c dir.zep.c files.zep.c folder.zep.c git.zep.c github.zep.c", "kodebin");
-	ADD_SOURCES(configure_module_dirname + "/kodebin/security", "password.zep.c patch.zep.c", "kodebin");
+	ADD_SOURCES(configure_module_dirname + "/kodebin/security", "firewall.zep.c password.zep.c patch.zep.c", "kodebin");
   ADD_FLAG("CFLAGS_KODEBIN", "/D ZEPHIR_RELEASE");
 }

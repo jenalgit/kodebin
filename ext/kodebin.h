@@ -11,6 +11,7 @@
 #include "kodebin/lib/folder.zep.h"
 #include "kodebin/lib/git.zep.h"
 #include "kodebin/lib/github.zep.h"
+#include "kodebin/security/firewall.zep.h"
 #include "kodebin/security/password.zep.h"
 #include "kodebin/security/patch.zep.h"
 

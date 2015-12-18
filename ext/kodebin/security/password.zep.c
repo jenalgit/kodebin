@@ -50,7 +50,7 @@ PHP_METHOD(Kodebin_Security_Password, md5_api) {
 	}
 
 
-	ZEPHIR_CALL_FUNCTION(&_0, "rand", NULL, 21);
+	ZEPHIR_CALL_FUNCTION(&_0, "rand", NULL, 24);
 	zephir_check_call_status();
 	ZEPHIR_INIT_VAR(salt);
 	zephir_md5(salt, _0);
@@ -85,7 +85,7 @@ PHP_METHOD(Kodebin_Security_Password, md5_10) {
 
 	ZEPHIR_SINIT_VAR(_0);
 	ZVAL_STRING(&_0, "md5", 0);
-	ZEPHIR_CALL_FUNCTION(&md5, "hash", NULL, 22, &_0, str);
+	ZEPHIR_CALL_FUNCTION(&md5, "hash", NULL, 25, &_0, str);
 	zephir_check_call_status();
 	ZEPHIR_SINIT_NVAR(_0);
 	ZVAL_LONG(&_0, 7);
@@ -93,7 +93,7 @@ PHP_METHOD(Kodebin_Security_Password, md5_10) {
 	ZVAL_LONG(&_1, 3);
 	ZEPHIR_INIT_VAR(salt);
 	zephir_substr(salt, md5, 7 , 3 , 0);
-	ZEPHIR_CALL_FUNCTION(&md5_secure, "strrev", NULL, 23, md5);
+	ZEPHIR_CALL_FUNCTION(&md5_secure, "strrev", NULL, 26, md5);
 	zephir_check_call_status();
 	ZEPHIR_SINIT_VAR(_2);
 	ZVAL_LONG(&_2, 0);

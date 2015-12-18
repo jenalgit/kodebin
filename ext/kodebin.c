@@ -34,6 +34,7 @@ zend_class_entry *kodebin_lib_files_ce;
 zend_class_entry *kodebin_lib_folder_ce;
 zend_class_entry *kodebin_lib_git_ce;
 zend_class_entry *kodebin_lib_github_ce;
+zend_class_entry *kodebin_security_firewall_ce;
 zend_class_entry *kodebin_security_password_ce;
 zend_class_entry *kodebin_security_patch_ce;
 
@@ -68,6 +69,7 @@ static PHP_MINIT_FUNCTION(kodebin)
 	ZEPHIR_INIT(Kodebin_Lib_Folder);
 	ZEPHIR_INIT(Kodebin_Lib_Git);
 	ZEPHIR_INIT(Kodebin_Lib_Github);
+	ZEPHIR_INIT(Kodebin_Security_Firewall);
 	ZEPHIR_INIT(Kodebin_Security_Password);
 	ZEPHIR_INIT(Kodebin_Security_Patch);
 
