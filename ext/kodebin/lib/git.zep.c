@@ -26,6 +26,28 @@ ZEPHIR_INIT_CLASS(Kodebin_Lib_Git) {
 
 }
 
+PHP_METHOD(Kodebin_Lib_Git, create_repo) {
+
+	int ZEPHIR_LAST_CALL_STATUS;
+	zval *name, *location, *git = NULL, *_0, *_1 = NULL;
+
+	ZEPHIR_MM_GROW();
+	zephir_fetch_params(1, 2, 0, &name, &location);
+
+
+
+	ZEPHIR_INIT_VAR(_0);
+	ZEPHIR_CONCAT_SVVS(_0, "git init --bare ", location, name, ".git");
+	ZEPHIR_MAKE_REF(git);
+	ZEPHIR_CALL_FUNCTION(&_1, "exec", NULL, 20, _0, git);
+	ZEPHIR_UNREF(git);
+	zephir_check_call_status();
+	ZEPHIR_CPY_WRT(git, _1);
+	zend_print_zval(git, 0);
+	ZEPHIR_MM_RESTORE();
+
+}
+
 PHP_METHOD(Kodebin_Lib_Git, clone_repo) {
 
 	int ZEPHIR_LAST_CALL_STATUS;
